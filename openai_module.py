@@ -1,4 +1,4 @@
-from openai import OpenAI
+import openai
 import os
 from dotenv import load_dotenv
 
@@ -6,7 +6,7 @@ from dotenv import load_dotenv
 load_dotenv()
 
 # Create an instance of the OpenAI class
-openai_client = OpenAI(api_key=os.getenv("OPENAI_API_KEY"))
+openai_client = openai.OpenAI(api_key=os.getenv("OPENAI_API_KEY"))
 
 
 def generate_text_basic(prompt: str, model = "gpt-3.5-turbo", system_prompt: str = "You are a helpfull ai assistant"):
